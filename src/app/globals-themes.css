@@ -1,0 +1,431 @@
+/* ===================================
+   VAPORWAVE THEME
+   =================================== */
+
+/* Vaporwave Theme Colors - Pastel Pink/Turquoise/Purple */
+:root[data-theme="vaporwave"] {
+  --vapor-pink: #FF6FD8;
+  --vapor-turquoise: #00D9FF;
+  --vapor-purple: #C471F5;
+  --vapor-peach: #FFA6C9;
+}
+
+/* Vaporwave Body Background - Dreamy Sunset */
+[data-theme="vaporwave"] body {
+  background: 
+    linear-gradient(
+      to bottom,
+      #FF6FD8 0%,
+      #C471F5 30%,
+      #00D9FF 60%,
+      #FFA6C9 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      transparent 1px,
+      transparent 50px,
+      rgba(255, 255, 255, 0.05) 51px
+    );
+  background-attachment: fixed;
+}
+
+/* Vaporwave Dark Mode */
+html.dark[data-theme="vaporwave"] body {
+  background: 
+    linear-gradient(
+      to bottom,
+      #33001A 0%,
+      #1A0033 30%,
+      #003344 60%,
+      #330022 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 111, 216, 0.1) 0px,
+      transparent 1px,
+      transparent 50px,
+      rgba(255, 111, 216, 0.1) 51px
+    );
+}
+
+/* Vaporwave Window Style */
+[data-theme="vaporwave"] .xp-window {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #FF6FD8, #00D9FF, #C471F5, #FFA6C9) 1;
+  box-shadow: 
+    0 0 30px rgba(255, 111, 216, 0.4),
+    0 0 50px rgba(0, 217, 255, 0.3),
+    inset 0 0 40px rgba(196, 113, 245, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Vaporwave Title Bar */
+[data-theme="vaporwave"] .xp-title-bar {
+  background: linear-gradient(135deg, #FF6FD8 0%, #C471F5 50%, #00D9FF 100%);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 0 20px rgba(255, 111, 216, 0.5),
+    inset 0 0 25px rgba(0, 217, 255, 0.2);
+}
+
+/* Vaporwave Button */
+[data-theme="vaporwave"] .xp-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #FF6FD8, #00D9FF) 1;
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 10px rgba(0, 217, 255, 1),
+    0 0 20px rgba(255, 111, 216, 0.6);
+  box-shadow: 
+    0 0 15px rgba(255, 111, 216, 0.4),
+    inset 0 0 15px rgba(0, 217, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+[data-theme="vaporwave"] .xp-button:hover {
+  background: rgba(255, 111, 216, 0.2);
+  box-shadow: 
+    0 0 25px rgba(255, 111, 216, 0.6),
+    0 0 35px rgba(0, 217, 255, 0.5),
+    inset 0 0 20px rgba(196, 113, 245, 0.2);
+}
+
+/* Vaporwave Green Button (Save Button) - Black Background */
+[data-theme="vaporwave"] .xp-button-green {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #FF6FD8, #00D9FF) 1;
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 10px rgba(0, 217, 255, 1),
+    0 0 20px rgba(255, 111, 216, 0.6);
+  box-shadow: 
+    0 0 20px rgba(255, 111, 216, 0.5),
+    inset 0 0 15px rgba(0, 217, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+[data-theme="vaporwave"] .xp-button-green:hover {
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 
+    0 0 30px rgba(255, 111, 216, 0.7),
+    0 0 40px rgba(0, 217, 255, 0.6),
+    inset 0 0 25px rgba(196, 113, 245, 0.3);
+}
+
+/* Vaporwave Save/Bookmark Buttons - Black Background */
+[data-theme="vaporwave"] .bg-gray-100,
+[data-theme="vaporwave"] .dark\:bg-gray-800 {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #FF6FD8, #00D9FF) 1;
+  box-shadow: 
+    0 0 15px rgba(255, 111, 216, 0.4),
+    inset 0 0 10px rgba(0, 217, 255, 0.1);
+}
+
+/* Vaporwave Taskbar */
+[data-theme="vaporwave"] .xp-taskbar {
+  background: rgba(255, 255, 255, 0.15);
+  border-top: 2px solid;
+  border-image: linear-gradient(90deg, #FF6FD8, #00D9FF, #C471F5, #FFA6C9) 1;
+  box-shadow: 
+    0 0 20px rgba(255, 111, 216, 0.4),
+    inset 0 -2px 20px rgba(0, 217, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Vaporwave System Tray */
+[data-theme="vaporwave"] .xp-system-tray {
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 2px solid;
+  border-image: linear-gradient(0deg, #FF6FD8, #00D9FF) 1;
+  backdrop-filter: blur(10px);
+}
+
+/* Vaporwave Start Button */
+[data-theme="vaporwave"] .xp-start-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #FF6FD8, #00D9FF) 1;
+  box-shadow: 
+    0 0 20px rgba(255, 111, 216, 0.5),
+    inset 0 0 20px rgba(0, 217, 255, 0.2);
+  text-shadow: 0 0 15px rgba(0, 217, 255, 1);
+  color: #FFFFFF !important;
+  backdrop-filter: blur(5px);
+}
+
+/* Vaporwave Sentiment Bar */
+[data-theme="vaporwave"] .sentiment-bar-container {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid;
+  border-image: linear-gradient(90deg, #FF6FD8, #00D9FF) 1;
+  box-shadow: 
+    0 0 15px rgba(255, 111, 216, 0.4),
+    inset 0 0 20px rgba(0, 217, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+[data-theme="vaporwave"] .sentiment-bar-positive {
+  background: linear-gradient(to bottom, 
+    rgba(0, 217, 255, 0.6) 0%, 
+    rgba(0, 217, 255, 0.4) 50%, 
+    rgba(0, 217, 255, 0.3) 100%
+  );
+  border-right: 1px solid rgba(0, 217, 255, 0.7);
+  box-shadow: 
+    0 0 15px rgba(0, 217, 255, 0.6),
+    inset 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+[data-theme="vaporwave"] .sentiment-bar-negative {
+  background: linear-gradient(to bottom, 
+    rgba(255, 111, 216, 0.6) 0%, 
+    rgba(255, 111, 216, 0.4) 50%, 
+    rgba(255, 111, 216, 0.3) 100%
+  );
+  border-left: 1px solid rgba(255, 111, 216, 0.7);
+  box-shadow: 
+    0 0 15px rgba(255, 111, 216, 0.6),
+    inset 0 0 15px rgba(255, 111, 216, 0.3);
+}
+
+[data-theme="vaporwave"] .sentiment-bar-indicator {
+  width: 3px;
+  background: linear-gradient(to bottom, #FF6FD8, #C471F5, #00D9FF);
+  box-shadow: 
+    0 0 20px rgba(255, 111, 216, 1),
+    0 0 30px rgba(0, 217, 255, 0.8);
+}
+
+/* Vaporwave Crypto Price - White Background for Readability */
+[data-theme="vaporwave"] .crypto-price-section,
+[data-theme="vaporwave"] .crypto-ticker-item {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #000000 !important;
+  text-shadow: none !important;
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #FF6FD8, #00D9FF) 1;
+}
+
+/* Dark Mode - Crypto Bar Black Text */
+html.dark .crypto-ticker-symbol,
+html.dark .crypto-ticker-price,
+html.dark .crypto-ticker-change-up,
+html.dark .crypto-ticker-change-down {
+  color: #000000 !important;
+}
+
+/* ===================================
+   WINDOWS 95 THEME
+   =================================== */
+
+/* Win95 Theme Colors - Classic Gray */
+:root[data-theme="win95"] {
+  --win95-gray: #C0C0C0;
+  --win95-dark-gray: #808080;
+  --win95-light-gray: #DFDFDF;
+  --win95-teal: #008080;
+}
+
+/* Win95 Body Background - Classic Desktop */
+[data-theme="win95"] body {
+  background: #008080;
+  background-attachment: fixed;
+}
+
+/* Win95 Dark Mode */
+html.dark[data-theme="win95"] body {
+  background: #006060;
+}
+
+/* Win95 Window Style - Thick 3D Border */
+[data-theme="win95"] .xp-window {
+  background: #C0C0C0;
+  border: none;
+  box-shadow: 
+    inset -2px -2px 0 #000000,
+    inset 2px 2px 0 #FFFFFF,
+    inset -3px -3px 0 #808080,
+    inset 3px 3px 0 #DFDFDF;
+  border-radius: 0;
+}
+
+/* Win95 Title Bar */
+[data-theme="win95"] .xp-title-bar {
+  background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
+  border-radius: 0;
+  border-bottom: none;
+  box-shadow: none;
+  padding: 2px 4px;
+}
+
+/* Win95 Button */
+[data-theme="win95"] .xp-button {
+  background: #C0C0C0;
+  border: none;
+  box-shadow: 
+    inset -2px -2px 0 #000000,
+    inset 2px 2px 0 #FFFFFF,
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #DFDFDF;
+  color: #000000;
+  text-shadow: none;
+  border-radius: 0;
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+[data-theme="win95"] .xp-button:hover {
+  background: #C8C8C8;
+}
+
+[data-theme="win95"] .xp-button:active {
+  box-shadow: 
+    inset 2px 2px 0 #000000,
+    inset -2px -2px 0 #FFFFFF,
+    inset 1px 1px 0 #808080,
+    inset -1px -1px 0 #DFDFDF;
+}
+
+/* Win95 Green Button */
+[data-theme="win95"] .xp-button-green {
+  background: #008000;
+  border: none;
+  box-shadow: 
+    inset -2px -2px 0 #000000,
+    inset 2px 2px 0 #00FF00,
+    inset -1px -1px 0 #004000,
+    inset 1px 1px 0 #00C000;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0 #000000;
+}
+
+/* Win95 Taskbar */
+[data-theme="win95"] .xp-taskbar {
+  background: #C0C0C0;
+  border-top: 2px solid #FFFFFF;
+  box-shadow: 
+    inset 0 2px 0 #DFDFDF,
+    inset 0 -2px 0 #808080;
+  border-radius: 0;
+}
+
+/* Win95 System Tray */
+[data-theme="win95"] .xp-system-tray {
+  background: #C0C0C0;
+  border-left: 2px solid #808080;
+  box-shadow: inset -2px 0 0 #DFDFDF;
+}
+
+/* Win95 Start Button */
+[data-theme="win95"] .xp-start-button {
+  background: #C0C0C0;
+  border: none;
+  box-shadow: 
+    inset -2px -2px 0 #000000,
+    inset 2px 2px 0 #FFFFFF,
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #DFDFDF;
+  border-radius: 0;
+  color: #000000 !important;
+  text-shadow: none;
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  font-weight: bold;
+}
+
+[data-theme="win95"] .xp-start-button:hover {
+  background: #C8C8C8;
+}
+
+[data-theme="win95"] .xp-start-button:active {
+  box-shadow: 
+    inset 2px 2px 0 #000000,
+    inset -2px -2px 0 #FFFFFF,
+    inset 1px 1px 0 #808080,
+    inset -1px -1px 0 #DFDFDF;
+}
+
+/* Win95 Scrollbar */
+[data-theme="win95"] ::-webkit-scrollbar {
+  width: 16px;
+  background: #C0C0C0;
+}
+
+[data-theme="win95"] ::-webkit-scrollbar-track {
+  background: #C0C0C0;
+  box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 #FFFFFF;
+}
+
+[data-theme="win95"] ::-webkit-scrollbar-thumb {
+  background: #C0C0C0;
+  box-shadow: 
+    inset -1px -1px 0 #000000,
+    inset 1px 1px 0 #FFFFFF,
+    inset -2px -2px 0 #808080,
+    inset 2px 2px 0 #DFDFDF;
+}
+
+[data-theme="win95"] ::-webkit-scrollbar-thumb:hover {
+  background: #C8C8C8;
+}
+
+/* Win95 Text Style */
+[data-theme="win95"] .text-gray-900,
+[data-theme="win95"] .text-black {
+  color: #000000 !important;
+}
+
+/* Win95 Window Content */
+[data-theme="win95"] .bg-white {
+  background: #FFFFFF !important;
+}
+
+[data-theme="win95"] .bg-gray-50 {
+  background: #DFDFDF !important;
+}
+
+[data-theme="win95"] .bg-gray-100 {
+  background: #C0C0C0 !important;
+}
+
+/* Win95 Border Colors */
+[data-theme="win95"] .border-gray-200 {
+  border-color: #808080 !important;
+}
+
+/* Win95 Sentiment Bar */
+[data-theme="win95"] .sentiment-bar-container {
+  background: #FFFFFF;
+  border: 2px solid;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-bottom-color: #DFDFDF;
+  border-right-color: #DFDFDF;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 #000000;
+}
+
+[data-theme="win95"] .sentiment-bar-positive {
+  background: #008000;
+  border-right: 2px solid #808080;
+  box-shadow: none;
+}
+
+[data-theme="win95"] .sentiment-bar-negative {
+  background: #C00000;
+  border-left: 2px solid #808080;
+  box-shadow: none;
+}
+
+[data-theme="win95"] .sentiment-bar-indicator {
+  width: 4px;
+  background: #000000;
+  box-shadow: -1px 0 0 #FFFFFF, 1px 0 0 #FFFFFF;
+}
+
