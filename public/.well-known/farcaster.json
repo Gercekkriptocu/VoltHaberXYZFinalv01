@@ -1,0 +1,26 @@
+{
+  "miniapp": {
+    "version": "1",
+    "name": "Volt News",
+    "iconUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_9b4b6658-cb02-40b5-9f8a-455cb13ac757-FwVNfi1xtBczEQGN3TThd4CFswBiya",
+    "homeUrl": "https://factory-occur-913.app.ohara.ai",
+    "imageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_9b4b6658-cb02-40b5-9f8a-455cb13ac757-FwVNfi1xtBczEQGN3TThd4CFswBiya",
+    "buttonTitle": "Open with Ohara",
+    "splashImageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/farcaster/splash_images/splash_image1.svg",
+    "splashBackgroundColor": "#ffffff",
+    "tags": [
+      "ohara",
+      "mini-app",
+      "base",
+      "farcaster"
+    ],
+    "primaryCategory": "entertainment",
+    "ogTitle": "Volt News",
+    "ogImageUrl": "https://usdozf7pplhxfvrl.public.blob.vercel-storage.com/thumbnail_9b4b6658-cb02-40b5-9f8a-455cb13ac757-FwVNfi1xtBczEQGN3TThd4CFswBiya"
+  },
+  "baseBuilder": {
+    "allowedAddresses": [
+      "0xa98FeB81794895160EefC5271475414632113954"
+    ]
+  }
+}
