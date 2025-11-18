@@ -1,0 +1,1028 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Windows XP Theme - Modern Luna Aesthetic */
+
+:root {
+  /* XP Luna Colors */
+  --xp-blue: #0058D0;
+  --xp-blue-light: #3C8CF8;
+  --xp-blue-dark: #003FAD;
+  --xp-green: #84B547;
+  --xp-green-light: #A4D869;
+  --xp-orange: #FF9900;
+  --xp-red: #DC3232;
+  
+  /* Bliss Background */
+  --xp-sky-top: #5395E1;
+  --xp-sky-middle: #A8C6E8;
+  --xp-sky-bottom: #E0F0FF;
+  --xp-grass-top: #7AB547;
+  --xp-grass-bottom: #4A7A2C;
+  
+  /* Window Chrome */
+  --xp-window-title-start: #0058D0;
+  --xp-window-title-end: #3C8CF8;
+  --xp-window-border: #0831D9;
+  
+  /* Glossy Button */
+  --xp-button-top: #ECE9D8;
+  --xp-button-bottom: #C1BBAA;
+  --xp-button-border: #003C74;
+  
+  /* Taskbar */
+  --xp-taskbar-start: #245EDC;
+  --xp-taskbar-end: #3F8CF3;
+  
+  /* Start Button */
+  --xp-start-green: #5EAC28;
+  --xp-start-green-hover: #73C73C;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-b text-foreground;
+    /* Bliss Background - Iconic XP Wallpaper */
+    background: linear-gradient(
+      to bottom,
+      var(--xp-sky-top) 0%,
+      var(--xp-sky-middle) 40%,
+      var(--xp-sky-bottom) 70%,
+      var(--xp-grass-top) 70%,
+      var(--xp-grass-bottom) 100%
+    );
+    background-attachment: fixed;
+    font-family: 'Tahoma', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    transition: background 0.5s ease;
+  }
+
+  /* Dark Mode - Sky and Grass (Bliss Theme) */
+  html.dark body {
+    background: 
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 70%,
+        #1A202C 70%,
+        #000000 100%
+      ),
+      linear-gradient(
+        to bottom,
+        #2D3748 0%,
+        #4A5568 40%,
+        #718096 70%
+      );
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hide Scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
+  /* XP Window Style */
+  .xp-window {
+    background: #ECE9D8;
+    border: 2px solid var(--xp-window-border);
+    border-radius: 8px 8px 0 0;
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+      4px 4px 8px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  /* XP Window Title Bar */
+  .xp-title-bar {
+    background: linear-gradient(
+      to bottom,
+      var(--xp-window-title-start) 0%,
+      var(--xp-window-title-end) 100%
+    );
+    border-radius: 6px 6px 0 0;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* XP Glossy Button */
+  .xp-button {
+    background: linear-gradient(
+      to bottom,
+      var(--xp-button-top) 0%,
+      #FFFFFF 50%,
+      #E0DED0 50%,
+      var(--xp-button-bottom) 100%
+    );
+    border: 1px solid var(--xp-button-border);
+    border-radius: 3px;
+    padding: 6px 16px;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+      1px 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+  
+  .xp-button:hover {
+    background: linear-gradient(
+      to bottom,
+      #FFFFFF 0%,
+      #F5F4ED 50%,
+      #E8E6D8 50%,
+      #D6D3C2 100%
+    );
+    border-color: #0831D9;
+  }
+  
+  .xp-button:active {
+    background: linear-gradient(
+      to bottom,
+      #D6D3C2 0%,
+      #E0DED0 50%,
+      #F0EEE0 50%,
+      #FFFFFF 100%
+    );
+    box-shadow: 
+      0 0 0 1px rgba(0, 0, 0, 0.2) inset,
+      0 1px 2px rgba(0, 0, 0, 0.3) inset;
+    transform: translateY(1px);
+  }
+  
+  /* XP Blue Button (Primary) */
+  .xp-button-blue {
+    background: linear-gradient(
+      to bottom,
+      #3C8CF8 0%,
+      #1C6CE8 50%,
+      #0058D0 50%,
+      #003FAD 100%
+    );
+    border: 1px solid #003C74;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+      1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .xp-button-blue:hover {
+    background: linear-gradient(
+      to bottom,
+      #5AA0FF 0%,
+      #3C8CF8 50%,
+      #1C6CE8 50%,
+      #0058D0 100%
+    );
+  }
+  
+  .xp-button-blue:active {
+    background: linear-gradient(
+      to bottom,
+      #003FAD 0%,
+      #0058D0 50%,
+      #1C6CE8 50%,
+      #3C8CF8 100%
+    );
+  }
+  
+  /* XP Green Button (Success) */
+  .xp-button-green {
+    background: linear-gradient(
+      to bottom,
+      #A4D869 0%,
+      #84B547 50%,
+      #6A9A38 50%,
+      #4A7A2C 100%
+    );
+    border: 1px solid #3A6A1C;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+      1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* XP Start Button */
+  .xp-start-button {
+    background: linear-gradient(
+      to bottom,
+      #73C73C 0%,
+      #5EAC28 50%,
+      #4A8A1C 50%,
+      #3A6A10 100%
+    );
+    border: 1px solid #2A5A08;
+    border-radius: 0 20px 20px 0;
+    padding: 6px 24px;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+      2px 2px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+  
+  .xp-start-button:hover {
+    background: linear-gradient(
+      to bottom,
+      #8AD850 0%,
+      #73C73C 50%,
+      #5EAC28 50%,
+      #4A8A1C 100%
+    );
+  }
+  
+  .xp-start-button:active {
+    background: linear-gradient(
+      to bottom,
+      #3A6A10 0%,
+      #4A8A1C 50%,
+      #5EAC28 50%,
+      #73C73C 100%
+    );
+    box-shadow: 
+      0 0 0 1px rgba(0, 0, 0, 0.3) inset,
+      1px 1px 3px rgba(0, 0, 0, 0.5) inset;
+    transform: translateY(1px);
+  }
+  
+  /* XP Taskbar */
+  .xp-taskbar {
+    background: linear-gradient(
+      to bottom,
+      var(--xp-taskbar-start) 0%,
+      var(--xp-taskbar-end) 100%
+    );
+    border-top: 1px solid #5A9CF8;
+    box-shadow: 
+      0 -1px 0 rgba(255, 255, 255, 0.3) inset,
+      0 -2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* XP System Tray */
+  .xp-system-tray {
+    background: linear-gradient(
+      to bottom,
+      #0E6CC6 0%,
+      #1B7ADA 100%
+    );
+    border-left: 1px solid #0A58B0;
+    padding: 4px 8px;
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.2) inset;
+  }
+  
+  /* Dark Mode - Gray Gradients for Taskbar and Windows */
+  html.dark .xp-taskbar {
+    background: linear-gradient(
+      to bottom,
+      #4A5568 0%,
+      #2D3748 100%
+    );
+    border-top: 1px solid #718096;
+  }
+  
+  html.dark .xp-title-bar {
+    background: linear-gradient(
+      to bottom,
+      #4A5568 0%,
+      #2D3748 100%
+    );
+  }
+  
+  html.dark .xp-system-tray {
+    background: linear-gradient(
+      to bottom,
+      #2D3748 0%,
+      #1A202C 100%
+    );
+    border-left: 1px solid #4A5568;
+  }
+
+  /* Dark Mode - XP Window Border (Black instead of Blue) */
+  html.dark .xp-window {
+    border-color: #1A1A1A;
+    box-shadow: 
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+      4px 4px 8px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* XP Window Control Buttons (Minimize, Maximize, Close) */
+  .xp-control-btn {
+    width: 21px;
+    height: 21px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+  
+  .xp-control-btn:hover {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.2) 100%
+    );
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .xp-control-btn:active {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+    transform: translateY(1px);
+  }
+  
+  /* XP Close Button (Red) */
+  .xp-close-btn {
+    background: linear-gradient(
+      to bottom,
+      #FF6B6B 0%,
+      #DC3232 100%
+    );
+    border-color: #C02020;
+  }
+  
+  .xp-close-btn:hover {
+    background: linear-gradient(
+      to bottom,
+      #FF8A8A 0%,
+      #FF6B6B 100%
+    );
+  }
+  
+  /* Scrollbar - XP Style */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #D4D0C8;
+    border: 1px solid #808080;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to right,
+      #ECE9D8 0%,
+      #FFFFFF 50%,
+      #ECE9D8 100%
+    );
+    border: 1px solid #003C74;
+    border-radius: 2px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      to right,
+      #F5F4ED 0%,
+      #FFFFFF 50%,
+      #F5F4ED 100%
+    );
+  }
+  
+  ::-webkit-scrollbar-button {
+    background: linear-gradient(
+      to bottom,
+      #ECE9D8 0%,
+      #C1BBAA 100%
+    );
+    border: 1px solid #003C74;
+  }
+}
+
+/* Fire Card Animation (For Breaking News) */
+@keyframes fire-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.6);
+  }
+}
+
+.animate-fire-pulse {
+  animation: fire-pulse 2s ease-in-out infinite;
+}
+
+/* XP Logo Shimmer Animation */
+@keyframes xp-shimmer {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+.animate-xp-shimmer {
+  animation: xp-shimmer 3s ease-in-out infinite;
+}
+
+/* Rick and Morty Portal Theme - Full Interdimensional Animations */
+
+/* Portal Ring Outer - Slow Counter-Clockwise */
+@keyframes portal-ring-outer {
+  0% {
+    opacity: 0.15;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: rotate(-180deg) scale(1.05);
+  }
+  100% {
+    opacity: 0.15;
+    transform: rotate(-360deg) scale(1);
+  }
+}
+
+.portal-ring-outer {
+  animation: portal-ring-outer 12s linear infinite;
+  transform-origin: center;
+}
+
+/* Portal Ring Middle - Medium Clockwise */
+@keyframes portal-ring-middle {
+  0% {
+    opacity: 0.25;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: rotate(180deg) scale(1.03);
+  }
+  100% {
+    opacity: 0.25;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.portal-ring-middle {
+  animation: portal-ring-middle 8s linear infinite;
+  transform-origin: center;
+}
+
+/* Portal Ring Inner - Fast Counter-Clockwise */
+@keyframes portal-ring-inner {
+  0% {
+    opacity: 0.2;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: rotate(-180deg) scale(1.02);
+  }
+  100% {
+    opacity: 0.2;
+    transform: rotate(-360deg) scale(1);
+  }
+}
+
+.portal-ring-inner {
+  animation: portal-ring-inner 6s linear infinite;
+  transform-origin: center;
+}
+
+/* Portal Energy Particles - Floating */
+@keyframes portal-particle-float-1 {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    opacity: 0.7;
+    transform: translate(-3px, -5px) scale(1.3);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(2px, -8px) scale(1.1);
+  }
+  75% {
+    opacity: 0.8;
+    transform: translate(-2px, -3px) scale(1.4);
+  }
+}
+
+.portal-particle-1 {
+  animation: portal-particle-float-1 3s ease-in-out infinite;
+}
+
+@keyframes portal-particle-float-2 {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    opacity: 0.8;
+    transform: translate(4px, -6px) scale(1.4);
+  }
+  66% {
+    opacity: 0.6;
+    transform: translate(-3px, -4px) scale(1.2);
+  }
+}
+
+.portal-particle-2 {
+  animation: portal-particle-float-2 4s ease-in-out infinite 0.5s;
+}
+
+@keyframes portal-particle-float-3 {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    opacity: 0.7;
+    transform: translate(-4px, -7px) scale(1.3);
+  }
+  80% {
+    opacity: 0.5;
+    transform: translate(3px, -5px) scale(1.1);
+  }
+}
+
+.portal-particle-3 {
+  animation: portal-particle-float-3 3.5s ease-in-out infinite 1s;
+}
+
+@keyframes portal-particle-float-4 {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    opacity: 0.9;
+    transform: translate(3px, -6px) scale(1.5);
+  }
+  70% {
+    opacity: 0.6;
+    transform: translate(-4px, -3px) scale(1.2);
+  }
+}
+
+.portal-particle-4 {
+  animation: portal-particle-float-4 4.5s ease-in-out infinite 1.5s;
+}
+
+/* Neon Glow with Pulse */
+@keyframes neon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.6)) drop-shadow(0 0 10px rgba(0, 255, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.9)) drop-shadow(0 0 16px rgba(0, 255, 255, 0.6));
+  }
+}
+
+.volt-text {
+  animation: neon-glow 3s ease-in-out infinite;
+}
+
+/* Glitch Effect - Rick's Portal Tech */
+@keyframes volt-glitch {
+  0%, 90%, 100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  91% {
+    opacity: 0.7;
+    transform: translate(-2px, 1px);
+  }
+  92% {
+    opacity: 0;
+    transform: translate(2px, -1px);
+  }
+  93% {
+    opacity: 0.8;
+    transform: translate(-1px, -1px);
+  }
+  94% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+.volt-text-glitch {
+  animation: volt-glitch 5s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+/* Logo Container with Hover */
+.volt-logo-container {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.volt-logo-container:hover {
+  transform: scale(1.05);
+}
+
+/* Background V Icon - Subtle Pulse */
+@keyframes bg-icon-pulse {
+  0%, 100% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: scale(1.05);
+  }
+}
+
+.volt-bg-icon {
+  animation: bg-icon-pulse 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ===================================
+   80's RETRO THEME
+   =================================== */
+
+/* 80's Theme Colors */
+:root[data-theme="80s"] {
+  --retro-pink: #FF006E;
+  --retro-cyan: #00F5FF;
+  --retro-purple: #8B00FF;
+  --retro-yellow: #FFFF00;
+  --retro-blue: #0080FF;
+  --retro-grid: #2D1B4E;
+  --retro-dark: #1A0B2E;
+}
+
+/* 80's Body Background - Synthwave Grid */
+[data-theme="80s"] body {
+  background: 
+    linear-gradient(
+      to bottom,
+      #1A0B2E 0%,
+      #2D1B4E 50%,
+      #3D2463 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 0, 110, 0.05) 0px,
+      transparent 1px,
+      transparent 40px,
+      rgba(255, 0, 110, 0.05) 41px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 245, 255, 0.05) 0px,
+      transparent 1px,
+      transparent 40px,
+      rgba(0, 245, 255, 0.05) 41px
+    );
+  background-attachment: fixed;
+}
+
+/* 80's Dark Mode */
+html.dark[data-theme="80s"] body {
+  background: 
+    linear-gradient(
+      to bottom,
+      #000000 0%,
+      #1A0B2E 50%,
+      #2D1B4E 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 0, 110, 0.1) 0px,
+      transparent 1px,
+      transparent 40px,
+      rgba(255, 0, 110, 0.1) 41px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 245, 255, 0.1) 0px,
+      transparent 1px,
+      transparent 40px,
+      rgba(0, 245, 255, 0.1) 41px
+    );
+}
+
+/* 80's Window Style - ASCII Green Terminal */
+[data-theme="80s"] .xp-window {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #00FF00;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 0, 0.6),
+    0 0 20px rgba(0, 255, 0, 0.4),
+    inset 0 0 30px rgba(0, 255, 0, 0.05);
+}
+
+/* 80's Title Bar - Green Terminal */
+[data-theme="80s"] .xp-title-bar {
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 2px solid #00FF00;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 0, 0.5),
+    inset 0 0 20px rgba(0, 255, 0, 0.1);
+  color: #00FF00 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+[data-theme="80s"] .xp-title-bar span {
+  color: #00FF00 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+/* 80's Button - Green Terminal Style */
+[data-theme="80s"] .xp-button {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00FF00;
+  color: #00FF00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  box-shadow: 
+    0 0 10px rgba(0, 255, 0, 0.4),
+    inset 0 0 10px rgba(0, 255, 0, 0.1);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+[data-theme="80s"] .xp-button:hover {
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.6),
+    inset 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+[data-theme="80s"] .xp-button:active {
+  background: rgba(0, 255, 0, 0.2);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 0, 0.8),
+    inset 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+/* 80's Green Button - Bright Terminal */
+[data-theme="80s"] .xp-button-green {
+  background: rgba(0, 255, 0, 0.2);
+  border: 2px solid #00FF00;
+  color: #00FF00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 1);
+  box-shadow: 
+    0 0 15px rgba(0, 255, 0, 0.6),
+    inset 0 0 10px rgba(0, 255, 0, 0.2);
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+}
+
+/* 80's Start Button - Terminal Green */
+[data-theme="80s"] .xp-start-button {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00FF00;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.6),
+    inset 0 0 15px rgba(0, 255, 0, 0.2);
+  text-shadow: 0 0 15px rgba(0, 255, 0, 1);
+  color: #00FF00 !important;
+}
+
+[data-theme="80s"] .xp-start-button:hover {
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 0, 0.8),
+    inset 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+/* 80's Taskbar - Terminal Black */
+[data-theme="80s"] .xp-taskbar {
+  background: rgba(0, 0, 0, 0.95);
+  border-top: 2px solid #00FF00;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.4),
+    inset 0 -2px 10px rgba(0, 255, 0, 0.1);
+}
+
+/* 80's System Tray - Terminal Black */
+[data-theme="80s"] .xp-system-tray {
+  background: rgba(0, 0, 0, 0.95);
+  border-left: 2px solid #00FF00;
+  box-shadow: -2px 0 10px rgba(0, 255, 0, 0.3);
+}
+
+/* 80's Scrollbar - Green Terminal */
+[data-theme="80s"] ::-webkit-scrollbar {
+  width: 12px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="80s"] ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid #00FF00;
+}
+
+[data-theme="80s"] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 0, 0.3);
+  border: 1px solid #00FF00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+[data-theme="80s"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+}
+
+/* 80's Green Terminal Glow */
+@keyframes neon-pulse-80s {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(0, 255, 0, 0.8),
+      0 0 10px rgba(0, 255, 0, 0.6),
+      0 0 20px rgba(0, 255, 0, 0.4);
+  }
+  50% {
+    text-shadow: 
+      0 0 10px rgba(0, 255, 0, 1),
+      0 0 20px rgba(0, 255, 0, 0.8),
+      0 0 30px rgba(0, 255, 0, 0.6);
+  }
+}
+
+[data-theme="80s"] .volt-text {
+  animation: neon-pulse-80s 2s ease-in-out infinite;
+  fill: #00FF00 !important;
+}
+
+/* 80's Terminal Text Style */
+[data-theme="80s"] .text-gray-900,
+[data-theme="80s"] .text-black,
+[data-theme="80s"] body,
+[data-theme="80s"] p,
+[data-theme="80s"] span,
+[data-theme="80s"] div {
+  color: #00FF00 !important;
+  font-family: 'Courier New', monospace !important;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* 80's Terminal - White Text for Detail Button and Breaking News Badge */
+[data-theme="80s"] .xp-button-blue,
+[data-theme="80s"] .breaking-news-badge,
+[data-theme="80s"] .breaking-badge,
+[data-theme="80s"] .fire-badge,
+[data-theme="80s"] button span {
+  color: #FFFFFF !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 80's Window Content */
+[data-theme="80s"] .bg-white {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-theme="80s"] .bg-gray-50 {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+[data-theme="80s"] .bg-gray-100 {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 80's Border Colors */
+[data-theme="80s"] .border-gray-200 {
+  border-color: #00FF00 !important;
+}
+
+/* Crypto Ticker Animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  animation: ticker 30s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* ===================================
+   SENTIMENT BAR - THEME AWARE
+   =================================== */
+
+/* XP Theme Sentiment Bar */
+.sentiment-bar-container {
+  background: #D4D0C8;
+  border: 1px solid #003C74;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1) inset, 1px 1px 2px rgba(0,0,0,0.15) inset;
+}
+
+.sentiment-bar-positive {
+  background: linear-gradient(to bottom, #A4D869 0%, #84B547 50%, #6A9A38 100%);
+  border-right: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.3) inset;
+}
+
+.sentiment-bar-negative {
+  background: linear-gradient(to bottom, #FF8A8A 0%, #FF6B6B 50%, #DC3232 100%);
+  border-left: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.3) inset;
+}
+
+.sentiment-bar-indicator {
+  width: 2px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #C0C0C0 100%);
+  box-shadow: 0 0 4px rgba(0,0,0,0.5), 0 0 2px rgba(255,255,255,0.5);
+}
+
+/* 80's Theme Sentiment Bar - ASCII Terminal Green */
+[data-theme="80s"] .sentiment-bar-container {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00FF00;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 0, 0.4),
+    inset 0 0 15px rgba(0, 255, 0, 0.05);
+}
+
+[data-theme="80s"] .sentiment-bar-positive {
+  background: linear-gradient(to bottom, 
+    rgba(0, 255, 0, 0.4) 0%, 
+    rgba(0, 255, 0, 0.3) 50%, 
+    rgba(0, 255, 0, 0.2) 100%
+  );
+  border-right: 1px solid rgba(0, 255, 0, 0.6);
+  box-shadow: 
+    0 0 10px rgba(0, 255, 0, 0.5),
+    inset 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+[data-theme="80s"] .sentiment-bar-negative {
+  background: linear-gradient(to bottom, 
+    rgba(0, 255, 0, 0.15) 0%, 
+    rgba(0, 255, 0, 0.1) 50%, 
+    rgba(0, 255, 0, 0.05) 100%
+  );
+  border-left: 1px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 
+    0 0 5px rgba(0, 255, 0, 0.3),
+    inset 0 0 5px rgba(0, 255, 0, 0.1);
+}
+
+[data-theme="80s"] .sentiment-bar-indicator {
+  width: 2px;
+  background: #00FF00;
+  box-shadow: 
+    0 0 10px rgba(0, 255, 0, 1),
+    0 0 20px rgba(0, 255, 0, 0.6);
+}
+
+/* Matrix Cursor for Degen Mode */
+.degen-mode-cursor {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><text x="2" y="14" fill="%2300FF00" font-family="monospace" font-size="14" style="text-shadow: 0 0 5px %2300FF00;">▮</text></svg>'), auto !important;
+}
+
+.degen-mode-cursor * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><text x="2" y="14" fill="%2300FF00" font-family="monospace" font-size="14" style="text-shadow: 0 0 5px %2300FF00;">▮</text></svg>'), auto !important;
+}
+
+/* Import additional themes */
+@import './globals-themes.css';
